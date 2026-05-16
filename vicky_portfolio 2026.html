@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vicky Anugerah Tri Hantari — Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--ink:#1a1814;--ink2:#5a5650;--ink3:#9a9690;--paper:#faf9f6;--paper2:#f2f0eb;--paper3:#e8e5de;--accent:#1D9E75;--accent2:#085041;--warm:#BA7517}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);font-size:15px;line-height:1.6}
+h1,h2,h3,.serif{font-family:'DM Serif Display',serif}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:1.25rem 3rem;background:rgba(250,249,246,0.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--paper3)}
+.nav-logo{font-family:'DM Serif Display',serif;font-size:1.1rem;color:var(--ink)}
+.nav-links{display:flex;gap:2rem}
+.nav-links a{font-size:13px;color:var(--ink2);text-decoration:none;letter-spacing:0.03em;transition:color 0.2s}
+.nav-links a:hover{color:var(--accent)}
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:8rem 3rem 4rem;position:relative;overflow:hidden}
+.hero-eyebrow{font-size:12px;letter-spacing:0.15em;text-transform:uppercase;color:var(--accent);margin-bottom:1.5rem;font-weight:500}
+.hero-name{font-family:'DM Serif Display',serif;font-size:clamp(3rem,6vw,5.5rem);line-height:1.05;color:var(--ink);margin-bottom:1rem}
+.hero-name em{font-style:italic;color:var(--accent)}
+.hero-sub{font-size:1.1rem;color:var(--ink2);max-width:520px;line-height:1.7;margin-bottom:2.5rem}
+.hero-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:3rem}
+.tag{font-size:12px;padding:5px 14px;border:1px solid var(--paper3);border-radius:100px;color:var(--ink2);background:var(--paper2)}
+.hero-cta{display:inline-flex;align-items:center;gap:10px;background:var(--ink);color:var(--paper);padding:14px 28px;border-radius:100px;font-size:14px;font-weight:500;text-decoration:none;transition:background 0.2s}
+.hero-cta:hover{background:var(--accent2)}
+.hero-deco{position:absolute;right:-80px;top:50%;transform:translateY(-50%);width:520px;height:520px;border-radius:50%;border:1px solid var(--paper3);opacity:0.6;pointer-events:none}
+.hero-deco2{position:absolute;right:60px;top:50%;transform:translateY(-50%);width:340px;height:340px;border-radius:50%;border:1px solid var(--paper3);opacity:0.4}
+.hero-deco3{position:absolute;right:170px;top:50%;transform:translateY(-50%);width:160px;height:160px;border-radius:50%;background:var(--paper2);opacity:0.6}
+section{padding:5rem 3rem}
+.section-label{font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent);font-weight:500;margin-bottom:2rem}
+.section-title{font-family:'DM Serif Display',serif;font-size:clamp(1.8rem,3vw,2.5rem);color:var(--ink);margin-bottom:1rem}
+.about{background:var(--paper2);border-top:1px solid var(--paper3);border-bottom:1px solid var(--paper3)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;max-width:980px}
+.about-text p{color:var(--ink2);line-height:1.8;margin-bottom:1rem;font-size:15px}
+.about-text p strong{color:var(--ink);font-weight:500}
+.about-stats{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+.stat-card{background:var(--paper);border:1px solid var(--paper3);border-radius:12px;padding:1.5rem}
+.stat-num{font-family:'DM Serif Display',serif;font-size:2.2rem;color:var(--ink);display:block;margin-bottom:4px}
+.stat-label{font-size:12px;color:var(--ink3);letter-spacing:0.03em}
+.projects-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;max-width:980px}
+.project-card{background:var(--paper2);border:1px solid var(--paper3);border-radius:16px;padding:2rem;display:flex;flex-direction:column;transition:transform 0.2s,border-color 0.2s}
+.project-card:hover{transform:translateY(-3px)}
+.project-card.featured{background:var(--ink);border-color:var(--ink);grid-column:span 2}
+.project-card.featured .project-tag{background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.6);border-color:transparent}
+.project-card.featured .project-title{color:#fff}
+.project-card.featured .project-desc{color:rgba(255,255,255,0.65)}
+.project-card.featured .project-year{color:rgba(255,255,255,0.4)}
+.project-card.featured .project-industry{color:rgba(255,255,255,0.5)}
+.project-card.featured .project-meta{border-color:rgba(255,255,255,0.1)}
+.project-tag{display:inline-block;font-size:11px;padding:3px 10px;border:1px solid var(--paper3);border-radius:100px;color:var(--ink3);margin-bottom:1rem;letter-spacing:0.04em}
+.project-title{font-family:'DM Serif Display',serif;font-size:1.3rem;color:var(--ink);margin-bottom:0.6rem;line-height:1.3}
+.project-desc{font-size:14px;color:var(--ink2);line-height:1.7;margin-bottom:1.25rem;flex:1}
+.project-meta{display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--paper3);padding-top:1rem}
+.project-industry{font-size:12px;color:var(--ink3)}
+.project-year{font-size:12px;color:var(--ink3);font-family:'DM Serif Display',serif;font-style:italic}
+.skills-section{background:var(--paper2);border-top:1px solid var(--paper3);border-bottom:1px solid var(--paper3)}
+.skills-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2rem;max-width:980px}
+.skill-group h4{font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);font-weight:500;margin-bottom:1rem}
+.skill-list{list-style:none}
+.skill-list li{font-size:14px;color:var(--ink2);padding:6px 0;border-bottom:1px solid var(--paper3);display:flex;align-items:center;gap:8px}
+.skill-list li::before{content:'';width:4px;height:4px;border-radius:50%;background:var(--accent);flex-shrink:0}
+.timeline{max-width:680px}
+.timeline-item{display:grid;grid-template-columns:120px 1fr;gap:2rem;margin-bottom:3rem}
+.timeline-item+.timeline-item{border-top:1px solid var(--paper3);padding-top:3rem}
+.t-year{font-family:'DM Serif Display',serif;font-style:italic;color:var(--ink3);font-size:14px}
+.t-company{font-size:12px;color:var(--ink3);margin-top:2px}
+.timeline-content h3{font-family:'DM Serif Display',serif;font-size:1.15rem;color:var(--ink);margin-bottom:6px}
+.timeline-content p{font-size:14px;color:var(--ink2);line-height:1.7}
+.contact-section{background:var(--ink);color:var(--paper)}
+.contact-section .section-label{color:var(--accent)}
+.contact-section .section-title{color:var(--paper)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;max-width:980px}
+.contact-info p{color:rgba(255,255,255,0.6);font-size:15px;line-height:1.8;margin-bottom:2rem}
+.contact-links{display:flex;flex-direction:column;gap:1rem}
+.contact-link{font-size:15px;color:rgba(255,255,255,0.7);text-decoration:none;display:flex;align-items:center;gap:10px;transition:color 0.2s}
+.contact-link:hover{color:var(--accent)}
+.cta-block{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:16px;padding:2.5rem}
+.cta-block p{color:rgba(255,255,255,0.55);font-size:14px;margin-bottom:1.5rem;line-height:1.7}
+.cta-block a{display:inline-block;background:var(--accent);color:#fff;padding:13px 26px;border-radius:100px;font-size:14px;font-weight:500;text-decoration:none}
+footer{padding:2rem 3rem;display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--paper3);background:var(--paper)}
+footer p{font-size:12px;color:var(--ink3)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+.hero>*{animation:fadeUp 0.7s ease both}
+.hero-eyebrow{animation-delay:0.1s}.hero-name{animation-delay:0.2s}.hero-sub{animation-delay:0.3s}.hero-tags{animation-delay:0.4s}.hero-cta{animation-delay:0.5s}
+</style>
+</head>
+<body>
+<nav>
+  <span class="nav-logo">Vicky A.T. Hantari</span>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#experience">Experience</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+<section class="hero">
+  <div class="hero-deco"></div><div class="hero-deco2"></div><div class="hero-deco3"></div>
+  <p class="hero-eyebrow">Digital Project Management & Martech</p>
+  <h1 class="hero-name">I bridge data<br>and <em>human stories</em>.</h1>
+  <p class="hero-sub">Senior digital PM with 5+ years delivering martech and data solutions for e-commerce, banking, telco, government, and education clients across Southeast Asia.</p>
+  <div class="hero-tags">
+    <span class="tag">Google Marketing Platform</span>
+    <span class="tag">Customer Data Platform</span>
+    <span class="tag">Adobe Experience Manager</span>
+    <span class="tag">Cross-functional leadership</span>
+    <span class="tag">Stakeholder management</span>
+  </div>
+  <a href="#contact" class="hero-cta">Let's work together →</a>
+</section>
+<section class="about" id="about">
+  <p class="section-label">About me</p>
+  <div class="about-grid">
+    <div class="about-text">
+      <h2 class="section-title">More than a project manager.</h2>
+      <p>I started in communications and research — writing press releases, facilitating policy discussions, analysing media narratives. Then I moved into digital and martech, where I realised the rarest skill isn't technical: it's being able to <strong>translate between worlds</strong>.</p>
+      <p>Today I lead end-to-end delivery of marketing technology projects — from CDP implementations to government CMS deployments — working across engineering, analytics, clients, and executive stakeholders.</p>
+      <p>What makes me different: I don't just deliver on time. I make sure everyone in the room actually understands what we built, why it matters, and how to use it.</p>
+    </div>
+    <div class="about-stats">
+      <div class="stat-card"><span class="stat-num">10+</span><span class="stat-label">Martech projects delivered</span></div>
+      <div class="stat-card"><span class="stat-num">5+</span><span class="stat-label">Years in digital PM</span></div>
+      <div class="stat-card"><span class="stat-num">7</span><span class="stat-label">Industries served</span></div>
+      <div class="stat-card"><span class="stat-num">MSc.</span><span class="stat-label">Communication Science, UI</span></div>
+    </div>
+  </div>
+</section>
+<section class="projects" id="projects">
+  <p class="section-label">Selected projects</p>
+  <h2 class="section-title">Work that left things better.</h2><br>
+  <div class="projects-grid">
+    <div class="project-card featured">
+      <span class="project-tag">Customer Data Platform</span>
+      <h3 class="project-title">CDP Profile Implementation — Indonesian Private University</h3>
+      <p class="project-desc">Led data integration, audience segmentation strategy, and stakeholder training for a major private university's first Customer Data Platform rollout. Translated complex technical requirements into actionable deliverables for non-technical client teams.</p>
+      <div class="project-meta"><span class="project-industry">Education · EdTech</span><span class="project-year">2023</span></div>
+    </div>
+    <div class="project-card">
+      <span class="project-tag">Google Marketing Platform</span>
+      <h3 class="project-title">GMP Implementation — Multi-Industry</h3>
+      <p class="project-desc">End-to-end delivery of tracking setup, analytics configuration, and reporting dashboards for e-commerce, banking, education, and telco clients over four years.</p>
+      <div class="project-meta"><span class="project-industry">E-commerce · Finance · Telco</span><span class="project-year">2021–2025</span></div>
+    </div>
+    <div class="project-card">
+      <span class="project-tag">Data Visualisation</span>
+      <h3 class="project-title">Executive Dashboard — Thailand Insurance & Hospital</h3>
+      <p class="project-desc">Built an interactive executive reporting dashboard in Looker Studio, consolidating data from multiple sources for a healthcare group in Thailand.</p>
+      <div class="project-meta"><span class="project-industry">Healthcare · Insurance</span><span class="project-year">2024</span></div>
+    </div>
+    <div class="project-card">
+      <span class="project-tag">Content Management System</span>
+      <h3 class="project-title">Adobe Experience Manager — Indonesian Ministry</h3>
+      <p class="project-desc">Led technical delivery of a government CMS implementation including requirements gathering, UAT coordination, and full documentation for a public-sector client.</p>
+      <div class="project-meta"><span class="project-industry">Government · Public Sector</span><span class="project-year">2023</span></div>
+    </div>
+  </div>
+</section>
+<section class="skills-section" id="skills">
+  <p class="section-label">Skills & tools</p>
+  <h2 class="section-title">What I bring to the table.</h2><br>
+  <div class="skills-grid">
+    <div class="skill-group">
+      <h4>Marketing Technology</h4>
+      <ul class="skill-list">
+        <li>Google Marketing Platform</li><li>Google Analytics 4</li><li>Adobe Experience Manager</li><li>Customer Data Platform</li><li>Looker Studio</li>
+      </ul>
+    </div>
+    <div class="skill-group">
+      <h4>Project Management</h4>
+      <ul class="skill-list">
+        <li>End-to-end delivery</li><li>Stakeholder management</li><li>Risk & issue management</li><li>Business analysis</li><li>JIRA · Asana · ClickUp</li>
+      </ul>
+    </div>
+    <div class="skill-group">
+      <h4>Communication & Research</h4>
+      <ul class="skill-list">
+        <li>Media monitoring & analysis</li><li>Strategic communication</li><li>Market research</li><li>Press release writing</li><li>Brand & competitor analysis</li>
+      </ul>
+    </div>
+  </div>
+</section>
+<section class="experience-section" id="experience">
+  <p class="section-label">Experience</p>
+  <h2 class="section-title">The path here.</h2><br>
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-year"><p class="t-year">2022 – now</p><p class="t-company">iProspect Merkle<br>Dentsu Indonesia</p></div>
+      <div class="timeline-content"><h3>Sr. Digital Project Management Officer</h3><p>Leading end-to-end delivery of 10+ martech and data solutions projects. Managing cross-functional teams of 10–20 members across e-commerce, banking, telco, and education clients. Providing technical guidance on GMP, AEM, GA4, and CDP implementations.</p></div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-year"><p class="t-year">2021 – 2022</p><p class="t-company">iProspect Merkle<br>Dentsu Indonesia</p></div>
+      <div class="timeline-content"><h3>Client Solution Executive</h3><p>Coordinated cross-functional teams to deliver client projects on time and within budget. Built relationships with Brand Manager–level clients and incorporated market trend research into planning cycles.</p></div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-year"><p class="t-year">2020 – 2021</p><p class="t-company">Vadate Communications</p></div>
+      <div class="timeline-content"><h3>Media Monitoring Analyst</h3><p>Analysed print, online, and broadcast media for multiple industry clients. Delivered daily, monthly, and annual reports including brand, competitor, and industry trend analysis with actionable recommendations.</p></div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-year"><p class="t-year">2019 – 2020</p><p class="t-company">O2 Consulting</p></div>
+      <div class="timeline-content"><h3>Communication Analyst</h3><p>Drafted strategic communication recommendations, produced media-ready fact sheets and press releases. Achieved 72% increase in tweet impressions and 96% growth in organic followers for a social media campaign.</p></div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-year"><p class="t-year">2018</p><p class="t-company">UNESCO Jakarta</p></div>
+      <div class="timeline-content"><h3>Intern — Communications & Research</h3><p>Contributed to knowledge products, social media content, and project documentation for development research initiatives.</p></div>
+    </div>
+  </div>
+</section>
+<section class="contact-section" id="contact">
+  <p class="section-label">Get in touch</p>
+  <div class="contact-grid">
+    <div>
+      <h2 class="section-title">Let's build something that actually works.</h2>
+      <p>I'm open to senior PM roles, consulting engagements, and projects in martech, data, or digital transformation — especially in regulated or public-sector environments.</p>
+      <div class="contact-links">
+        <a class="contact-link" href="mailto:hantarivicky@gmail.com"><span>✉</span> hantarivicky@gmail.com</a>
+        <a class="contact-link" href="tel:+628564308509"><span>☎</span> +62 856-4308-9509</a>
+        <a class="contact-link"><span>📍</span> Jakarta, Indonesia</a>
+      </div>
+    </div>
+    <div class="cta-block">
+      <h3 style="font-family:'DM Serif Display',serif;font-size:1.3rem;color:#fff;margin-bottom:0.75rem;">Open to opportunities</h3>
+      <p>Whether it's a full-time role or a project engagement — if you're working on something complex that needs someone who can manage delivery and communicate it clearly, let's talk.</p>
+      <a href="mailto:hantarivicky@gmail.com">Send me an email →</a>
+    </div>
+  </div>
+</section>
+<footer>
+  <p>© 2026 Vicky Anugerah Tri Hantari</p>
+  <p>Jakarta, Indonesia</p>
+</footer>
+</body>
+</html>
